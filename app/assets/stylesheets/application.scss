@@ -2,3 +2,11 @@
 @import "bootstrap";
 @import "devise_bootstrap_views";
 @import "offcanvas";
+
+.alert-alert {
+  @extend .alert-success;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
