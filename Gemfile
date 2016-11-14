@@ -13,6 +13,7 @@ gem 'rspec-rails'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise-bootstrap-views'
+gem 'stripe'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
