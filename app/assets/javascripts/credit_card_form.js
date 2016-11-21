@@ -1,4 +1,3 @@
-'use strict';
 $(document).ready(function() {
     function submitHandler(event) {
         var $form = $(event.target);
@@ -24,7 +23,7 @@ $(document).ready(function() {
             $form.find("input[type=submit]").prop("disabled", false);
         } else {
             token = response.id;
-            var hiddenField = `<input type="hidden" name="payment[token]" value="${token}" />`;
+            var hiddenField = '<input type="hidden" name="payment[token]" value="'+ token +'" />';
 
             $form.append(hiddenField);
             $("[data-stripe=number]").remove();
@@ -42,11 +41,7 @@ $(document).ready(function() {
         if ($("#flash-messages").size() < 1) {
             $('div.container.main div:first').prepend("<div></div>")
         }
-        var messageDiv = `
-        <div class="alert alert-warning">
-            <a class="close" data-dismiss="alert">x<a/>
-            <div id="flash-alert">${message}</div>
-        </div>`;
+        var messageDiv = '<div class="alert alert-warning"><a class="close" data-dismiss="alert">x<a/><div id="flash-alert">'+ message + '</div></div>';
 
         $("#flash-messages").html(messageDiv);
         $(".alert").delay(5000).fadeOut(3000);
