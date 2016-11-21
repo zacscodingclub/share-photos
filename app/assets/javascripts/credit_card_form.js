@@ -3,13 +3,6 @@ $(document).ready(function() {
         var $form = $(event.target);
         $form.find("input[type=submit]").prop("disabled", true);
 
-        let stripeValues = {
-              number: $("[data-stripe=number]").val(),
-            exp_moth: $("[data-stripe=exp-month]").val(),
-            exp_year: $("[data-stripe=exp-year]").val(),
-                 cvc: $("[data-stripe=cvv]").val()
-        }
-
         if (Stripe) {
             Stripe.card.createToken($form, stripeResponseHandler);
         } else {
