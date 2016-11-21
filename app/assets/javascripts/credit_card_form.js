@@ -6,19 +6,18 @@ $(document).ready(function() {
         if (Stripe) {
             Stripe.card.createToken($form, stripeResponseHandler);
         } else {
-            let loadFail = "Could not load card processing ability.  Please refresh your browser and try again.";
+            var loadFail = "Could not load card processing ability.  Please refresh your browser and try again.";
             showError(loadFail);
         }
         return false;
     }
 
     function stripeResponseHandler(status, response) {
-        debugger;
         var token, $form;
         $form = $(".cc-form");
 
         if (response.error) {
-            let errorMessage = response.error.message;
+            var errorMessage = response.error.message;
             console.log(errorMessage);
             showError(errorMessage);
             $form.find("input[type=submit]").prop("disabled", false);
@@ -42,7 +41,7 @@ $(document).ready(function() {
         if ($("#flash-messages").size() < 1) {
             $('div.container.main div:first').prepend("<div></div>")
         }
-        let messageDiv = `
+        var messageDiv = `
         <div class="alert alert-warning">
             <a class="close" data-dismiss="alert">x<a/>
             <div id="flash-alert">${message}</div>
