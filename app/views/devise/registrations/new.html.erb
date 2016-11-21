@@ -1,6 +1,7 @@
-<script type="text/javascript">
-  Stripe.setPublishableKey("<%= ENV["SRIPE_TEST_PUBLISHABLE_KEY"] %>");
-</script>
+<%= javascript_tag do %>
+  Stripe.setPublishableKey("<%= ENV["STRIPE_TEST_PUBLISHSABLE_KEY"] %>");
+<% end %>
+
 <%= bootstrap_devise_error_messages! %>
 
 <div class="row col-md-8 col-md-offset-2">
