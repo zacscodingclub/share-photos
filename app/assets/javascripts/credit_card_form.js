@@ -1,3 +1,4 @@
+'use strict';
 $(document).ready(function() {
     function submitHandler(event) {
         var $form = $(event.target);
