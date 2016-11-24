@@ -1,0 +1,17 @@
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @images.each do |image| %>
+      <tr>
+        <td><%= link_to image.name, image %></td>
+        <td><%= image_tag image.picture.url, size: '100x100' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
