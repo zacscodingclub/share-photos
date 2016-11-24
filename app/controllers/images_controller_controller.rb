@@ -1,0 +1,2 @@
+class ImagesControllerController < ApplicationController
+end
