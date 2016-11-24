@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.user = current_user
-    binding.pry
+
     if @image.save
       redirect_to @image, notice: "Image was successfully created."
     else
